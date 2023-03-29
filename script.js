@@ -2,7 +2,7 @@ const kpis = [
   { title: "Number of Listings", currentValue: 121, goal: 2000 },
   { title: "User Sign-ups", currentValue: 384, goal: 1000 },
   { title: "Conversion Rate", currentValue: "8%", goal: "25%" },
-  { title: "Average Revenue per User (ARPU)", currentValue: "12", goal: "50" },
+  { title: "Average Revenue per User (ARPU)", currentValue: "$891", goal: "$2000" },
   { title: "Gross Transaction Volume (GTV)", currentValue: "$52,974", goal: "$250,000" },
   { title: "Total Revenue", currentValue: "$10,595", goal: "$172,000" },
 ];

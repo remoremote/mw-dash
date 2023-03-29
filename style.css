@@ -1,0 +1,163 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #0a0a0a;
+  color: #ffffff;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 2.5em;
+}
+
+p {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1em;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 20px;
+}
+
+@media (max-width: 800px) {
+  .grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+}
+
+
+.grid-item {
+  background-color: rgba(255, 255, 255,0.1);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  transition: transform 0.3s;
+  display: flex; /* add this rule */
+  flex-direction: column; /* add this rule */
+  justify-content: space-between; /* add this rule */
+}
+
+.grid-item:hover {
+  transform: scale(1.05);
+}
+
+h2 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.kpi-progress-container {
+  width: 100%;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.kpi-progress-bar {
+  height: 100%;
+  background-color: #32a1ce;
+  border-radius: 5px;
+}
+
+.current-value {
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #32a1ce;
+}
+
+.edit-input {
+  display: block;
+  margin: 10px auto;
+  width: calc(100% - 70px);
+  height: 40px;
+  padding: 10px 10px;
+  border-radius: 5px 0 0 5px;
+  border: 2px solid rgba(255, 255, 255, 0.3);;
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.save-button {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  border-radius: 0 5px 5px 0;
+  background-color: #32a1ce;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  height: 40px;
+  line-height: 1;
+  width: 70px;
+}
+
+.goal {
+  display: flex; /* add this rule */
+  align-items: center; /* add this rule */
+  justify-content: space-between; /* add this rule */
+}
+
+
+.save-button:hover {
+background-color: #1f6378;
+}
+
+::-webkit-input-placeholder {
+/* Chrome/Opera/Safari */
+color: rgba(255, 255, 255, 0.3);
+opacity: 0.5;
+}
+
+::-moz-placeholder {
+/* Firefox 19+ */
+color: rgba(255, 255, 255, 0.3);
+opacity: 0.5;
+}
+
+:-ms-input-placeholder {
+/* IE 10+ */
+color: rgba(255, 255, 255, 0.3);
+opacity: 0.5;
+}
+
+:-moz-placeholder {
+/* Firefox 18- */
+color: rgba(255, 255, 255, 0.3);
+opacity: 0.5;
+}
+
+input[type="text"] {
+color: rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 600px) {
+.grid-container {
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 20px;
+}

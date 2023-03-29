@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>maison.work KPI</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <h1>KPI Dashboard 2023</h1>
+    <p>Please note that we are currently in the process of pivoting our business model.<br> As such, the current numbers on the dashboard may not reflect our progress accurately.<br> However, we anticipate a significant improvement in the second semester of 2023 <br>as we continue to implement our new strategy.</p>
+    <div class="grid-container">
+      <!-- KPI Items -->
+    </div>
+
+<template id="kpi-template">
+  <div class="grid-item">
+    <h2 class="kpi-title"></h2>
+    <div class="kpi-progress-container">
+      <div class="kpi-progress-bar"></div>
+    </div>
+    <p class="current-value"></p>
+    <p class="goal-value"></p>
+    <div class="goal">
+      <input type="text" class="edit-input" placeholder="Edit progress" />
+      <button class="save-button">Save</button>
+    </div>
+  </div>
+</template>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

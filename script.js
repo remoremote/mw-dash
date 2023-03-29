@@ -4,7 +4,7 @@ const kpis = [
   { title: "Conversion Rate", currentValue: "8%", goal: "25%" },
   { title: "Average Revenue per User (ARPU)", currentValue: "891", goal: "2000" },
   { title: "Gross Transaction Volume (GTV)", currentValue: "52974", goal: "250000" },
-  { title: "Total Revenue", currentValue: "10595", goal: "172000" },
+  { title: "Total Revenue Year-to-date (YTD)", currentValue: "10595", goal: "172000" },
 ];
 
 const gridContainer = document.querySelector(".grid-container");

@@ -1,37 +1,52 @@
-const kpis = [
-  { title: "Number of Listings", currentValue: 143, goal: 2000 },
-  { title: "User Sign-ups", currentValue: 396, goal: 1000 },
-  { title: "Conversion Rate", currentValue: "8%", goal: "25%" },
-  { title: "Average Revenue per User (ARPU)", currentValue: "903", goal: "2000" },
-  { title: "Gross Transaction Volume (GTV)", currentValue: "52974", goal: "250000" },
-  { title: "Total Revenue Year-to-date (YTD)", currentValue: "12595", goal: "172000" },
-];
+const kpis = loadKpis();
+
+function loadKpis() {
+  const storedKpis = localStorage.getItem("kpis");
+  if (storedKpis) {
+    return JSON.parse(storedKpis);
+  } else {
+    return [
+      { title: "Number of Listings", currentValue: 143, goal: 2000 },
+      { title: "User Sign-ups", currentValue: 396, goal: 1000 },
+      { title: "Conversion Rate", currentValue: "8%", goal: "25%" },
+      { title: "Average Revenue per User (ARPU)", currentValue: "903", goal: "2000" },
+      { title: "Gross Transaction Volume (GTV)", currentValue: "52974", goal: "250000" },
+      { title: "Total Revenue Year-to-date (YTD)", currentValue: "12595", goal: "172000" },
+    ];
+  }
+}
+
+function saveKpis() {
+  localStorage.setItem("kpis", JSON.stringify(kpis));
+}
 
 const gridContainer = document.querySelector(".grid-container");
 const kpiTemplate = document.getElementById("kpi-template");
 
-kpis.forEach((kpi) => {
+kpis.forEach((kpi, index) => {
   const kpiClone = kpiTemplate.content.cloneNode(true);
   const title = kpiClone.querySelector(".kpi-title");
   const progressBar = kpiClone.querySelector(".kpi-progress-bar");
   const currentValue = kpiClone.querySelector(".current-value");
-  const goalValue = kpiClone.querySelector(".goal-value"); // new element
+  const goalValue = kpiClone.querySelector(".goal-value");
   const input = kpiClone.querySelector(".edit-input");
   const saveButton = kpiClone.querySelector(".save-button");
 
   title.innerText = kpi.title;
   currentValue.innerText = kpi.currentValue;
-  goalValue.innerText = kpi.goal; // set goal value
+  goalValue.innerText = kpi.goal;
   progressBar.style.width = calculatePercentage(kpi.currentValue, kpi.goal) + "%";
 
   saveButton.addEventListener("click", () => {
-  const newValue = input.value;
-  if (newValue) {
-    currentValue.innerText = newValue;
-    progressBar.style.width = calculatePercentage(newValue, kpi.goal) + "%";
-    input.value = "";
-  }
-});
+    const newValue = input.value;
+    if (newValue) {
+      kpi.currentValue = newValue;
+      currentValue.innerText = newValue;
+      progressBar.style.width = calculatePercentage(newValue, kpi.goal) + "%";
+      input.value = "";
+      saveKpis();
+    }
+  });
 
   gridContainer.appendChild(kpiClone);
 });

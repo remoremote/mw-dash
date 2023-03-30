@@ -25,6 +25,10 @@ p {
   color: rgba(255, 255, 255, 0.3);
 }
 
+.headline-p {
+  max-width: 640px;
+}  
+
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

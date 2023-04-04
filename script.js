@@ -1,31 +1,39 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const kpis = loadKpis();
-  const gridContainer = document.querySelector(".grid-container");
-  const kpiTemplate = document.getElementById("kpi-template");
+  loadKpis().then((kpis) => {
+    const gridContainer = document.querySelector(".grid-container");
+    const kpiTemplate = document.getElementById("kpi-template");
 
-  kpis.forEach((kpi, index) => {
-    renderKpi(gridContainer, kpiTemplate, kpi);
+    kpis.forEach((kpi, index) => {
+      renderKpi(gridContainer, kpiTemplate, kpi);
+    });
   });
 });
 
-function loadKpis() {
-  const storedKpis = localStorage.getItem("kpis");
-  if (storedKpis) {
-    return JSON.parse(storedKpis);
+// Fetch KPIs from the backend
+async function loadKpis() {
+  try {
+    const response = await fetch('http://localhost:3000/kpis');
+    const kpis = await response.json();
+    return kpis;
+  } catch (error) {
+    console.error('Error fetching KPIs:', error);
+    return getDefaultKpis();
   }
-
-  return getDefaultKpis();
 }
 
-function getDefaultKpis() {
-  return [
-    { title: "Number of Listings", currentValue: 148, goal: 2000 },
-    { title: "User Sign-ups", currentValue: 403, goal: 1000 },
-    { title: "Conversion Rate", currentValue: "8%", goal: "25%" },
-    { title: "Average Revenue per User (ARPU)", currentValue: "896", goal: "2000" },
-    { title: "Gross Transaction Volume (GTV)", currentValue: "52974", goal: "250000" },
-    { title: "Total Revenue Year-to-date (YTD)", currentValue: "12595", goal: "172000" },
-  ];
+// Update KPIs in the backend
+async function saveKpis(kpis) {
+  try {
+    await fetch('http://localhost:3000/kpis', {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(kpis),
+    });
+  } catch (error) {
+    console.error('Error updating KPIs:', error);
+  }
 }
 
 function saveKpis(kpis) {

@@ -1,0 +1,19 @@
+# .gitignore
+
+# Ignore the node_modules directory
+node_modules/
+
+# Ignore the .env file, which contains sensitive information
+.env
+
+# Ignore logs, databases, and other generated files
+*.log
+*.sqlite
+
+# Ignore the operating system and editor-specific files
+.DS_Store
+.vscode/
+*.swp
+*.swo
+*.swn
+*.bak

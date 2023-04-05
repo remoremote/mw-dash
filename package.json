@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "@supabase/supabase-js": "^2.14.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2"
+  },
+  "name": "mw-dash",
+  "description": "This is a test dashboard for internal use :-)",
+  "version": "1.0.0",
+  "main": "npm init -y",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/remoremote/mw-dash.git"
+  },
+  "keywords": [
+    "dashboard"
+  ],
+  "author": "remoremote",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/remoremote/mw-dash/issues"
+  },
+  "homepage": "https://github.com/remoremote/mw-dash#readme"
+}

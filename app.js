@@ -10,7 +10,8 @@ require('dotenv').config();
 // Initialize Supabase
 const supabaseUrl = 'https://sajjcmymwqwiceounwvu.supabase.co';
 const supabaseKey = process.env.SUPABASE_KEY;
-const supabase = createClient(https://sajjcmymwqwiceounwvu.supabase.co, eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNhampjbXltd3F3aWNlb3Vud3Z1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODA1ODg2ODQsImV4cCI6MTk5NjE2NDY4NH0.JuNRhfzehgOiGldnSxrbCuZtRgIn_4rXagAPNZsFKXU);
+const supabase = createClient(supabaseUrl, supabaseKey);
+
 
 // Enable CORS
 app.use(cors());

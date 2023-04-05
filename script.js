@@ -36,10 +36,6 @@ async function saveKpis(kpis) {
   }
 }
 
-function saveKpis(kpis) {
-  localStorage.setItem("kpis", JSON.stringify(kpis));
-}
-
 function renderKpi(gridContainer, kpiTemplate, kpi) {
   const kpiClone = kpiTemplate.content.cloneNode(true);
 

@@ -19,10 +19,10 @@ function loadKpis() {
 
 function getDefaultKpis() {
   return [
-    { title: "Number of Listings", currentValue: 148, goal: 2000 },
-    { title: "User Sign-ups", currentValue: 403, goal: 1000 },
-    { title: "Conversion Rate", currentValue: "8%", goal: "25%" },
-    { title: "Average Revenue per User (ARPU)", currentValue: "896", goal: "2000" },
+    { title: "Number of Listings", currentValue: 151, goal: 2000 },
+    { title: "User Sign-ups", currentValue: 423, goal: 1000 },
+    { title: "Conversion Rate", currentValue: "9%", goal: "25%" },
+    { title: "Average Revenue per User (ARPU)", currentValue: "903", goal: "2000" },
     { title: "Gross Transaction Volume (GTV)", currentValue: "52974", goal: "250000" },
     { title: "Total Revenue Year-to-date (YTD)", currentValue: "12595", goal: "172000" },
   ];
